@@ -38,6 +38,9 @@ RUN echo "SigningTable       /opt/opendkim/SigningTable" >> /etc/opendkim.conf
 RUN echo "ExternalIgnoreList /opt/opendkim/TrustedHosts" >> /etc/opendkim.conf
 RUN echo "InternalHosts      /opt/opendkim/TrustedHosts" >> /etc/opendkim.conf
 
+ADD sources/openerp_mailgate.py /bin/openerp_mailgate.py
+RUN chmod +x /bin/openerp_mailgate.py
+
 RUN echo "[supervisord]" >> /etc/supervisor/conf.d/supervisord.conf
 RUN echo "nodaemon=true" >> /etc/supervisor/conf.d/supervisord.conf
 RUN echo "" >> /etc/supervisor/conf.d/supervisord.conf
