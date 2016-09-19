@@ -48,6 +48,7 @@ RUN echo "[program:rsyslog]" >> /etc/supervisor/conf.d/supervisord.conf
 RUN echo "command=/etc/init.d/rsyslog start" >> /etc/supervisor/conf.d/supervisord.conf
 RUN echo "[program:postfix]" >> /etc/supervisor/conf.d/supervisord.conf
 RUN echo "command=/etc/init.d/postfix start" >> /etc/supervisor/conf.d/supervisord.conf
+RUN echo "autorestart=false" >> /etc/supervisor/conf.d/supervisord.conf
 RUN echo "[program:opendkim]" >> /etc/supervisor/conf.d/supervisord.conf
 RUN echo "command=/etc/init.d/opendkim start" >> /etc/supervisor/conf.d/supervisord.conf
 
